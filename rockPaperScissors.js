@@ -1,5 +1,6 @@
 console.log("hi");
 
+//We first declare a user input
 const getUserChoice = (userInput) => {
   userInput = userInput.toLowerCase();
   if (
@@ -14,6 +15,7 @@ const getUserChoice = (userInput) => {
   }
 };
 
+//Then, we declare computer choice randomized
 const getComputerChoice = () => {
   const randomNumber = Math.floor(Math.random() * 4);
   switch (randomNumber) {
@@ -30,6 +32,7 @@ const getComputerChoice = () => {
   }
 };
 
+//The below code are the choices of the player and the computer with argumets
 const determineWinner = (userChoice, computerChoice) => {
   if (userChoice === computerChoice) {
     return "A tie!!";
@@ -59,7 +62,10 @@ const determineWinner = (userChoice, computerChoice) => {
     return "bombastic!! You freaking Wonnn";
   }
 };
+
+//The function below if for the game play
 const playGame = () => {
+  //You can choose which ever input in the fuction call getUserChoice and see the results
   const userChoice = getUserChoice("bomb");
   const computerChoice = getComputerChoice();
 
@@ -68,4 +74,6 @@ const playGame = () => {
 
   console.log(determineWinner(userChoice, computerChoice));
 };
+
+//function call
 playGame();
